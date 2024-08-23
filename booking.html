@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" type="text/css" href="tickets.css">
+    <style>
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; 
+            filter: blur(1.5px);
+        }
+
+        .ui-datepicker {
+            font-size: 14px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                dateFormat: "mm/dd/yy"
+            });
+        });
+    </script>
+</head>
+<body>
+    <video id="bg-video" autoplay muted loop>
+        <source src="ocean.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="booking-form-w3layouts">
+        <form id="bookingForm" method="post">
+            <h2 class="sub-heading-agileits">Booking Details</h2>
+            <br><br>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <select class="form-control" name="activityName">
+                        <option>Activity Name</option> 
+                        <option value="Parasailing">Parasailing</option>
+                        <option value="Surfing">Surfing</option>
+                        <option value="Wind Suefing">Wind Suefing</option>
+                        <option value="Kayaking">Kayaking</option>
+                        <option value="Jet Skiing">Jet Skiing</option>
+                        <option value="Snorkling">Snorkling</option>
+                        <option value="Swimming with fishes">Swimming with fishes</option>
+                        <option value="Introduction to Scuba diving">Introduction to Scuba diving</option>
+                        <option value="Glass bottom boat">Glass bottom boat</option>
+                        <option value="Manta ray snorkle">Manta ray snorkle</option>
+                        <option value="Shark cage diving">Shark cage diving</option>
+                        <option value="Night diving for biolumnicent creatures">Night diving for biolumnicent creatures</option>
+                        <option value="Advanced Scuba diving">Advanced Scuba diving</option>
+                        <option value="Underwater Photography">Underwater Photography</option>
+                        <option value="Guided reef tour">Guided reef tour</option>
+                        <option value="Submarine tours">Submarine tours</option>
+                        <option value="Ruins exploration">Ruins exploration</option>
+                        <option value="Underwater volcano exploration">Underwater volcano exploration</option>
+                        <option value="Shipwrek tour">Shipwrek tour</option>
+                        <option value="Guided archeology tour">Guided archeology tour</option>
+                    </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <select class="form-control" name="range">
+                        <option>Range</option>
+                        <option value="Shore Leve">Shore Level</option>
+                        <option value="Shallow Level">Shallow Level</option>
+                        <option value="Middle Level">Middle Level</option>
+                        <option value="Deep Level">Deep Level</option>
+                    </select>
+                </div>
+            </div>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <select class="form-control" name="location">
+                        <option>Location</option>
+                        <option value="Phuket & Koh Samui, Thailand">Phuket & Koh Samui, Thailand</option>
+                        <option value="Goa, India">Goa, India</option>
+                        <option value="Port Louis, Mauritius">Port Louis, Mauritius</option>
+                        <option value="Andamans, India">Andamans, India</option>
+                        <option value="Brisbane, Australia">Brisbane, Australia</option>
+                        <option value="Lakshadweep, India">Lakshadweep, India</option>
+                        <option value="Lagos & Sagres, Portugal">Lagos & Sagres, Portugal</option>
+                        <option value="Mykonos, Greece">Mykonos, Greece</option>
+                        <option value="Caribbean Islands">Caribbean Islands</option>
+                        <option value="Jaws, Hawaii, USA">Jaws, Hawaii, USA</option>
+                    </select>
+                </div>
+            </div>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1" >
+                  <input id="datepicker" name="date" type="text" placeholder="Date" required>
+                </div>
+            </div>
+            <div class="triple-wthree">
+                <div class="field-agileinfo-spc form-w3-agile-text11">
+                    <select class="form-control" name="adultCount">
+                        <option value="">Adults</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text22">
+                    <select class="form-control" name="childrenCount">
+                        <option value="">Children(2-17 Yrs)</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+            </div>
+            <br><br>
+            <h3 class="sub-heading-agileits">Personal Details</h3>
+            <br><br>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                  <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="field-agileinfo-spc form-w3-agile-text">
+               <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="clear"></div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear Form">
+            <div class="clear"></div>
+        </form>
+    </div>
+</body>
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+   import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+
+   const firebaseConfig = {
+     apiKey: "AIzaSyC4cq5On0oRSAqp7vaS8tnedIZrDUoydzU",
+     authDomain: "ocean-tourism-management.firebaseapp.com",
+     projectId: "ocean-tourism-management",
+     storageBucket: "ocean-tourism-management.appspot.com",
+     messagingSenderId: "989577435763",
+     appId: "1:989577435763:web:341bdd346ef4ee7c14e806",
+     measurementId: "G-K61R7KM5RL"
+   };
+
+   const app = initializeApp(firebaseConfig);
+   const db = getFirestore(app);
+
+   document.getElementById('bookingForm').addEventListener('submit', async function(event) {
+     event.preventDefault(); // Prevent the default form submission
+
+     // Collect form data
+     const formData = new FormData(this);
+     const data = {
+       activityName: formData.get('activityName'),
+       range: formData.get('range'),
+       location: formData.get('location'),
+       date: formData.get('date'),
+       adultCount: formData.get('adultCount'),
+       childrenCount: formData.get('childrenCount'),
+       name: formData.get('name'),
+       phoneNumber: formData.get('phoneNumber'),
+       email: formData.get('email')
+     };
+
+     // Save data to Firestore
+     try {
+       await addDoc(collection(db, 'bookings'), data);
+       alert('Booking submitted successfully!');
+       this.reset(); // Optionally reset the form
+     } catch (error) {
+       console.error('Error submitting booking:', error);
+       alert('Error submitting booking. Please try again.');
+     }
+   });
+ </script>
+</html>

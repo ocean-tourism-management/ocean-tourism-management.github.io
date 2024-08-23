@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign In Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/signin.css">
+</head>
+<body>
+  <form>
+    <div class="login-box">
+      <h1>Sign In</h1>
+      <div class="textbox">
+        <input type="text" placeholder="Email" id="email" name="email" value="" required> 
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Password" id="password" name="password" value="" maxlength="8" required>
+      </div>
+      <input class="btn" type="button" name="submit" value="Sign In" id="submitSignIn">
+      <center><a style="color: white;" href="signup.html">Don't have an account?</a></center>
+    </div>
+  </form>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyC4cq5On0oRSAqp7vaS8tnedIZrDUoydzU",
+      authDomain: "ocean-tourism-management.firebaseapp.com",
+      projectId: "ocean-tourism-management",
+      storageBucket: "ocean-tourism-management.appspot.com",
+      messagingSenderId: "989577435763",
+      appId: "1:989577435763:web:341bdd346ef4ee7c14e806",
+      measurementId: "G-K61R7KM5RL"
+    };
+    
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    // Sign In
+    document.getElementById("submitSignIn").addEventListener('click', function(e){
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("Login Successful!");
+        window.location.href = 'mainPage.html';
+      })
+      .catch((error) => {
+        console.error("Error during sign in", error);
+        alert("Error: " + error.message);
+      });
+    });
+  </script>
+</body>
+</html>
